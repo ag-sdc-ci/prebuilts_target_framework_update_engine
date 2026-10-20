@@ -1,0 +1,56 @@
+// Auto-generated Blueprint for system/update_engine (framework extractive)
+// Staged from Extractive APEX package: org.blisslabs.ag.ext.update_engine
+
+package {
+    default_applicable_licenses: ["system_update_engine_license"],
+}
+
+license {
+    name: "system_update_engine_license",
+    visibility: [":__subpackages__"],
+    license_kinds: ["SPDX-license-identifier-Apache-2.0"],
+    license_text: ["NOTICE"],
+}
+
+filegroup {
+    name: "libupdate_engine_aidl",
+    srcs: [
+        "binder_bindings/android/os/IUpdateEngine.aidl",
+        "binder_bindings/android/os/IUpdateEngineCallback.aidl",
+    ],
+    path: "binder_bindings",
+}
+
+aidl_interface {
+    name: "libupdate_engine_stable",
+    product_available: true,
+    srcs: [
+        "stable/android/os/IUpdateEngineStable.aidl",
+        "stable/android/os/IUpdateEngineStableCallback.aidl",
+    ],
+    backend: {
+        cpp: {
+            enabled: true,
+        },
+        java: {
+            enabled: true,
+        },
+        ndk: {
+            enabled: true,
+            apex_available: [
+                "com.android.gki.*",
+            ],
+        },
+    },
+    versions_with_info: [
+        {
+            version: "1",
+            imports: [],
+        },
+        {
+            version: "2",
+            imports: [],
+        },
+    ],
+    frozen: true,
+}

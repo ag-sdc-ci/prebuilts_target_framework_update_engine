@@ -1,0 +1,5 @@
+upstream_repo: system/update_engine
+framework_extractive: true
+package: org.blisslabs.ag.ext.update.engine.framework
+source: https://android.googlesource.com/platform/system/update_engine
+build_type: extractive_apex
